@@ -1,0 +1,26 @@
+{% extends 'portfolio/base.html'%}
+{% block content %}
+
+
+HELLO Blog
+<br>
+<h2> Ellenord has written {{totals.count}} blog{{totals.count|pluralize}} </h2>
+<br>
+
+<br>
+
+<h1>Ellenord's Blog</h1>
+
+
+{% for total in totals %}
+<!-- redo below is the application name -->
+<a href="{% url 'redo:testpage' total.id %}"><h2>{{ total.title }}</h2></a>
+<h3>{{total.date|date:'M d Y'|upper}}</h3>
+<p>  {{total.description|truncatechars:100}}</p>
+
+{% endfor %}
+
+<br>
+
+
+{% endblock %}

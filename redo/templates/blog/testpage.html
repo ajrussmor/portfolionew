@@ -1,0 +1,15 @@
+
+{% extends 'portfolio/base.html'%}
+{% block content %}
+
+
+
+{{total.title}}
+ <h3>--{{total.date|date:'F jS Y' }}--</h3>
+<p>  {{total.description|safe}}</p>
+
+<a href="{% url 'redo:all_blogs'  %}"><h2>Return to All Blogs Page</h2></a>
+
+
+
+{% endblock %}
